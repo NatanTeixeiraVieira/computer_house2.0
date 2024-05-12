@@ -1,0 +1,122 @@
+.home #carousel {
+  background-color: #bcbcbc;
+  padding-top: 1rem;
+}
+
+.home #carousel #changing-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+.home #carousel .product-image {
+  height: 16rem;
+  border-radius: 6px;
+}
+
+.home #carousel .image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 0.5rem;
+  color: #222;
+  text-decoration: none;
+}
+
+.home #carousel .image-container h2 {
+  width: 20rem;
+}
+
+.home #carousel .product-name {
+  font-size: 1.5rem;
+}
+
+.home #carousel .previous-price {
+  color: #ee1212;
+  text-decoration: line-through;
+}
+
+.home #carousel .current-price {
+  color: #25d725;
+  font-size: 1.5rem;
+}
+
+.home .products {
+  padding: 2rem;
+}
+
+.home .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 16rem);
+  justify-content: center;
+  gap: 4rem;
+}
+
+.home .products-grid .product {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease 0s;
+  background-color: #fefefe;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px #dcdcdc;
+}
+
+.home .products-grid .product .link-buy-product {
+  color: #222;
+  text-decoration: none;
+}
+
+.home .products-grid .product:hover {
+  box-shadow: 3px 3px 6px #bcbcbc;
+}
+
+.home .products-grid .product .favorite-container {
+  padding: 0.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 3rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.home .products-grid .product .favorite-button {
+  width: 1.75rem;
+}
+
+.home .products-grid .product .produt-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 10rem;
+}
+
+.home .products-grid .product .product-image {
+  border-radius: 6px;
+  width: 6rem;
+  height: fit-content;
+  max-height: 10rem;
+}
+
+.home .products-grid .product .product-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+}
+
+.home .products-grid .product .rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 1rem;
+  margin-top: 0.5rem;
+}
+
+.home .products-grid .product .product-stars-icon {
+  width: 1rem;
+  cursor: pointer;
+}
