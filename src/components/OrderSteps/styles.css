@@ -1,0 +1,34 @@
+.order-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-steps .step {
+  width: fit-content;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.order-steps .current {
+  background-color: #0086ff;
+}
+
+.order-steps .success {
+  background-color: #0ec70e;
+}
+
+.order-steps .path {
+  width: 2rem;
+  height: 0.5rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.order-steps .step img {
+  width: 2rem;
+}

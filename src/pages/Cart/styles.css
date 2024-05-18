@@ -1,0 +1,50 @@
+.cart {
+  padding: 2rem;
+  min-height: calc(100vh - 6rem);
+}
+
+.cart .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 16rem);
+  justify-content: center;
+  gap: 4rem;
+}
+
+.cart .payment {
+  background-color: #fefefe;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart .payment .pay {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cart .payment .pay .total {
+  font-size: 1.25rem;
+}
+
+.cart .payment .button {
+  height: fit-content;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ea1d1d;
+  border: none;
+  outline: none;
+
+  a {
+    color: #fefefe;
+    text-decoration: none;
+  }
+}
+
+.no-products {
+  font-size: 1.5rem;
+  text-align: center;
+}

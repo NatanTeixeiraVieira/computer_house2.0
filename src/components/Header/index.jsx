@@ -32,7 +32,7 @@ export default function Header() {
         </nav>
         <div className="login-button">
           <button>
-            <a href="#">Entrar</a>
+            <Link to="#">Entrar</Link>
           </button>
         </div>
       </nav>

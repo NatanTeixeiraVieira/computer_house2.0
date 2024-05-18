@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.css';
-import { useEffect } from 'react';
 import { getAllProductsPaged } from '../../services/products';
 import { formatCurrency } from '../../utils/format';
-import { FavoriteBorder, StarRate } from '@mui/icons-material';
 import { generateDiscount } from '../../utils/product';
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
+import Product from '../../components/Product';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -41,7 +41,7 @@ export default function Home() {
             (product) =>
               product.priceDiscount && (
                 <Carousel.Item key={product.id} className="item">
-                  <a href="identification.html" className="image-container">
+                  <Link to="#" className="image-container">
                     <img
                       src={product.image}
                       alt={product.title}
@@ -58,7 +58,7 @@ export default function Home() {
                         {product.priceDiscount}
                       </strong>
                     </span>
-                  </a>
+                  </Link>
                 </Carousel.Item>
               ),
           )}
@@ -67,29 +67,7 @@ export default function Home() {
       <section className="products">
         <ul className="products-grid">
           {products.map((product) => (
-            <li key={product.id} className="product">
-              <a href="identification.html" className="link-buy-product">
-                <div className="produt-image-container">
-                  <img
-                    src={product.image}
-                    alt={`Imagem do ${product.title}`}
-                    className="product-image"
-                  />
-                  <div className="favorite-container">
-                    <FavoriteBorder />
-                    {/* <FavoriteIcon /> */}
-                  </div>
-                </div>
-                <div className="product-description">
-                  <span>{product.title}</span>
-                  <strong>{formatCurrency(product.price)}</strong>
-                  <div className="rating">
-                    <StarRate />
-                    <span>{product.rating.rate}</span>
-                  </div>
-                </div>
-              </a>
-            </li>
+            <Product key={product.id} product={product} />
           ))}
         </ul>
       </section>
