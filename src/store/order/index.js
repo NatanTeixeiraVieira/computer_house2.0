@@ -4,12 +4,12 @@ export const useOrderStore = create((set) => ({
   state: {
     order: {
       delivery: {
-        cep: null,
+        cep: '',
         state: '',
         city: '',
         neighborhood: '',
         street: '',
-        number: null,
+        number: '',
       },
     },
   },

@@ -37,11 +37,7 @@
   background-color: #ea1d1d;
   border: none;
   outline: none;
-
-  a {
-    color: #fefefe;
-    text-decoration: none;
-  }
+  color: #fefefe;
 }
 
 .no-products {

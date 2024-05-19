@@ -50,9 +50,9 @@ export default function Cart() {
                 <strong>Total: {formatCurrency(total)}</strong>
               </span>
             </div>
-            <button className="button">
-              <Link to={'/order/delivery'}>Finalizar pedido</Link>
-            </button>
+            <Link to={'/order/delivery'}>
+              <button className="button">Finalizar pedido</button>
+            </Link>
           </section>
         </>
       )}

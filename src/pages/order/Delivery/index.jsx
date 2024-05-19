@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
 import OrderSteps from '../../../components/OrderSteps';
 import './styles.css';
@@ -8,6 +8,8 @@ import { deliverySchema } from '../../../validations/schemas';
 import { useOrderStore } from '../../../store/order';
 
 export default function Delivery() {
+  const navigate = useNavigate();
+
   const {
     state: {
       order: { delivery },
@@ -26,6 +28,7 @@ export default function Delivery() {
 
   const handleSendForm = (data) => {
     addDelivery(data);
+    navigate('/order/payment');
   };
 
   return (
@@ -36,7 +39,8 @@ export default function Delivery() {
         <form className="form" onSubmit={handleSubmit(handleSendForm)}>
           <div className="input-group">
             <InputField
-              type="number"
+              mask="99999-999"
+              type="string"
               placeholder="Digite seu cep"
               label="CEP"
               {...register('cep')}
