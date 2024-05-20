@@ -2,10 +2,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
 import OrderSteps from '../../../components/OrderSteps';
 import './styles.css';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { deliverySchema } from '../../../validations/schemas';
 import { useOrderStore } from '../../../store/order';
+import { useEffect } from 'react';
+import { regexCep } from '../../../validations/regex';
+import { getInfosByCep } from '../../../services/brasilApi';
+import { cepMask } from '../../../validations/mask';
+import ReactInputMask from 'react-input-mask';
 
 export default function Delivery() {
   const navigate = useNavigate();
@@ -21,14 +26,33 @@ export default function Delivery() {
     formState: { errors },
     register,
     handleSubmit,
+    watch,
+    setValue,
+    control,
   } = useForm({
     resolver: zodResolver(deliverySchema),
     defaultValues: delivery,
   });
 
+  const cepField = watch('cep');
+
+  useEffect(() => {
+    setValue('cep', cepMask(cepField));
+    if (regexCep.test(cepField)) {
+      (async () => {
+        const address = await getInfosByCep(cepField);
+        setValue('state', address.state);
+        setValue('city', address.city);
+        setValue('neighborhood', address.neighborhood);
+        setValue('street', address.street);
+      })();
+    }
+  }, [cepField, setValue]);
+
   const handleSendForm = (data) => {
-    addDelivery(data);
-    navigate('/order/payment');
+    console.log('🚀 ~ handleSendForm ~ data:', data);
+    // addDelivery(data);
+    // navigate('/order/payment');
   };
 
   return (
@@ -39,12 +63,12 @@ export default function Delivery() {
         <form className="form" onSubmit={handleSubmit(handleSendForm)}>
           <div className="input-group">
             <InputField
-              mask="99999-999"
               type="string"
               placeholder="Digite seu cep"
               label="CEP"
               {...register('cep')}
               helperText={errors?.cep?.message}
+              maxLength={9}
             />
             <InputField
               type="text"
