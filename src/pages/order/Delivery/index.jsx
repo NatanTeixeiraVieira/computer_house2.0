@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
 import OrderSteps from '../../../components/OrderSteps';
 import './styles.css';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { deliverySchema } from '../../../validations/schemas';
 import { useOrderStore } from '../../../store/order';
@@ -10,7 +10,6 @@ import { useEffect } from 'react';
 import { regexCep } from '../../../validations/regex';
 import { getInfosByCep } from '../../../services/brasilApi';
 import { cepMask } from '../../../validations/mask';
-import ReactInputMask from 'react-input-mask';
 
 export default function Delivery() {
   const navigate = useNavigate();
@@ -28,7 +27,6 @@ export default function Delivery() {
     handleSubmit,
     watch,
     setValue,
-    control,
   } = useForm({
     resolver: zodResolver(deliverySchema),
     defaultValues: delivery,
@@ -51,8 +49,8 @@ export default function Delivery() {
 
   const handleSendForm = (data) => {
     console.log('🚀 ~ handleSendForm ~ data:', data);
-    // addDelivery(data);
-    // navigate('/order/payment');
+    addDelivery(data);
+    navigate('/order/payment');
   };
 
   return (

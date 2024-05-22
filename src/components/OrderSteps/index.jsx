@@ -4,9 +4,9 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PaidIcon from '@mui/icons-material/Paid';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
-export default function OrderSteps() {
+export default function OrderSteps({ className, ...rest }) {
   return (
-    <section className="order-steps">
+    <section className={`order-steps ${className}`} {...rest}>
       <span className="step success">
         <PersonIcon fontSize={'medium'} />
       </span>

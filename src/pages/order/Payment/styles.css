@@ -1,0 +1,140 @@
+.payment-steps {
+  padding-top: 2rem;
+}
+
+.payment {
+  background-color: #eee;
+}
+
+.payment {
+  padding: 2rem;
+}
+
+.payment h3 {
+  font-weight: 400;
+}
+
+.payment .title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.payment .forms {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.payment .form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin: 0 auto;
+}
+
+.payment .payment-method {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.payment hr {
+  position: absolute;
+  left: 5vw;
+  width: 90vw;
+  color: #777;
+}
+
+.payment .pix {
+  margin-top: 2rem;
+}
+
+.payment .payment-method input {
+  width: 1rem;
+}
+
+.payment .form-credit-card {
+  width: 20rem;
+}
+
+.payment .forms h2 {
+  margin: 3rem 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.payment .field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.payment .field .input,
+.payment .field .installment {
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #222222;
+  font-size: 1rem;
+}
+
+.payment .finish-button {
+  width: 20rem;
+  text-align: center;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  color: #ededed;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #0ec70e;
+  margin-top: 1rem;
+}
+
+.payment .pix-payment-options {
+  display: flex;
+  gap: 4rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.payment .pix .qr-code img {
+  width: 12rem;
+}
+
+.payment .pix .payment-code {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.payment .pix .code {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 1020px) {
+  .identification .identification-form-section {
+    width: 100%;
+  }
+
+  .payment .forms {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .payment .form-pix {
+    width: 20rem;
+  }
+
+  .payment .pix-payment-options {
+    flex-direction: column;
+  }
+
+  .payment .button-container {
+    width: 100%;
+  }
+
+  .payment .finish-button {
+    width: 100%;
+  }
+}
