@@ -1,0 +1,54 @@
+.home #carousel {
+  background-color: #bcbcbc;
+  padding-top: 1rem;
+}
+
+.home #carousel #changing-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+.home #carousel .product-image {
+  height: 16rem;
+  border-radius: 6px;
+}
+
+.home #carousel .image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 0.5rem;
+  color: #222;
+  text-decoration: none;
+}
+
+.home #carousel .image-container h2 {
+  width: 20rem;
+}
+
+.home #carousel .product-name {
+  font-size: 1.5rem;
+}
+
+.home #carousel .previous-price {
+  color: #ee1212;
+  text-decoration: line-through;
+}
+
+.home #carousel .current-price {
+  color: #25d725;
+  font-size: 1.5rem;
+}
+
+.home .products {
+  padding: 2rem;
+}
+
+.home .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 16rem);
+  justify-content: center;
+  gap: 4rem;
+}

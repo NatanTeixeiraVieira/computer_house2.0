@@ -1,0 +1,76 @@
+.delivery {
+  padding: 2rem;
+}
+
+.delivery .delivery-form-section {
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 4rem;
+}
+
+.delivery .delivery-form-section .title {
+  margin-bottom: 2rem;
+}
+
+.delivery .delivery-form-section .input-group {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.delivery .delivery-form-section .buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.delivery .delivery-form-section .buttons button,
+.delivery .delivery-form-section .buttons a {
+  text-align: center;
+  width: 16rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  color: #ededed;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.delivery .delivery-form-section .buttons .cancel {
+  background-color: #d71e1e;
+}
+
+.delivery .delivery-form-section .buttons .continue {
+  background-color: #0ec70e;
+}
+
+@media screen and (max-width: 1020px) {
+  .delivery .delivery-form-section {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  wwwx .delivery .delivery-form-section .input-group {
+    flex-direction: column;
+  }
+
+  .delivery .delivery-form-section .buttons button,
+  .delivery .delivery-form-section .buttons a {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .delivery .delivery-form-section {
+    padding: 0;
+  }
+
+  .delivery .delivery-form-section .buttons {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

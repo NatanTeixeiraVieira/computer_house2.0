@@ -1,0 +1,96 @@
+.header {
+  background-color: #24252a;
+}
+
+.header .nav-bar {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 6rem;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo h1 {
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header .span {
+  color: #ea1d1d;
+}
+
+.header .nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.header .nav-list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.header .nav-list ul li {
+  display: flex;
+}
+
+.header .nav-list ul li a:hover {
+  color: #ea1d1d;
+}
+
+.header .shopping-cart {
+  color: #fff;
+  cursor: pointer;
+  margin-left: 0.75rem;
+  display: flex;
+}
+
+.header .shopping-cart:hover {
+  color: #ea1d1d;
+}
+
+.header .nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin: 0 1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header .login-button button {
+  border: none;
+  background-color: #ea1d1d;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.header .nav-bar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 625px) {
+  .header .nav-bar {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header .login-button button {
+    width: 10rem;
+    padding: 0.5rem 1rem;
+  }
+}
