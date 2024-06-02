@@ -20,8 +20,11 @@
 }
 
 .payment .forms {
-  width: 20rem;
   margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  height: 24rem;
 }
 
 .payment .form {
@@ -44,12 +47,22 @@
   color: #777;
 }
 
-.payment .pix {
-  margin-top: 2rem;
-}
-
 .payment .payment-method input {
   width: 1rem;
+}
+
+.pix {
+  width: 17rem;
+}
+
+.pix-approved-text {
+  background-color: #0ec70e;
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+  color: #efefef;
+}
+.payment .credit-card {
+  width: 20rem;
 }
 
 .payment .form-credit-card {
@@ -75,6 +88,13 @@
   font-size: 1rem;
 }
 
+.payment .finish-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 .payment .finish-button {
   width: 20rem;
   text-align: center;
@@ -86,29 +106,10 @@
   text-decoration: none;
   border-radius: 5px;
   background-color: #0ec70e;
+}
+
+.pix-form p {
   margin-top: 1rem;
-}
-
-.payment .pix-payment-options {
-  display: flex;
-  gap: 4rem;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.payment .pix .qr-code img {
-  width: 12rem;
-}
-
-.payment .pix .payment-code {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.payment .pix .code {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 
 @media screen and (max-width: 1020px) {

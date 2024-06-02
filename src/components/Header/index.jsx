@@ -8,7 +8,7 @@ export default function Header() {
       <nav className="nav-bar">
         <div className="logo">
           <h1>
-            Computer <span className="span">House</span>
+            Shop <span className="span">House</span>
           </h1>
         </div>
         <nav className="nav-list">

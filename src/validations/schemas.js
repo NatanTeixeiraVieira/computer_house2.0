@@ -15,3 +15,8 @@ export const deliverySchema = z.object({
   street: requiredStringField('A rua é obrigatória'),
   number: requiredStringField('O número é obrigatório'),
 });
+
+export const creditCardPaymentSchema = z.object({
+  number: requiredStringField('O cartão de crédito é obrigatório.'),
+  name: requiredStringField('O nome é obrigatório.'),
+});

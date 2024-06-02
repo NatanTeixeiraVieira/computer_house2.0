@@ -6,10 +6,12 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { deliverySchema } from '../../../validations/schemas';
 import { useOrderStore } from '../../../store/order';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { regexCep } from '../../../validations/regex';
 import { getInfosByCep } from '../../../services/brasilApi';
 import { cepMask } from '../../../validations/mask';
+import FormActionButtons from '../../../components/FormActionButtons';
+import { useReloadFormPage } from '../../../hooks/useReloadFormPage';
 
 export default function Delivery() {
   const navigate = useNavigate();
@@ -32,6 +34,8 @@ export default function Delivery() {
     defaultValues: delivery,
   });
 
+  useReloadFormPage();
+
   const cepField = watch('cep');
 
   useEffect(() => {
@@ -48,7 +52,6 @@ export default function Delivery() {
   }, [cepField, setValue]);
 
   const handleSendForm = (data) => {
-    console.log('🚀 ~ handleSendForm ~ data:', data);
     addDelivery(data);
     navigate('/order/payment');
   };
@@ -110,15 +113,9 @@ export default function Delivery() {
               helperText={errors?.number?.message}
             />
           </div>
-          <div className="buttons">
-            <Link to="#" className="cancel">
-              {' '}
-              Voltar{' '}
-            </Link>
-            <button type="submit" className="continue">
-              Continuar
-            </button>
-          </div>
+          <FormActionButtons
+            onContinueButtonClick={handleSubmit(handleSendForm)}
+          />
         </form>
       </section>
     </div>

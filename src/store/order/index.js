@@ -12,6 +12,12 @@ export const useOrderStore = create((set) => ({
         number: '',
       },
     },
+    paymentForm: null,
+    creditCard: {
+      number: '',
+      name: '',
+      installment: 0,
+    },
   },
   actions: {
     addDelivery: (delivery) => {
@@ -20,6 +26,29 @@ export const useOrderStore = create((set) => ({
           order: {
             delivery,
           },
+        },
+      }));
+    },
+
+    addPayment: ({ paymentForm, number, name, installment }) => {
+      set((state) => ({
+        state: {
+          ...state.state,
+          paymentForm,
+          creditCard: {
+            number,
+            name,
+            installment,
+          },
+        },
+      }));
+    },
+
+    addPix: ({ paymentForm }) => {
+      set((state) => ({
+        state: {
+          ...state.state,
+          paymentForm,
         },
       }));
     },

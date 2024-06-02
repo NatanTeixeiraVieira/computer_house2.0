@@ -6,7 +6,6 @@ export const formatCurrency = (value) => {
 };
 
 export const formatCurrencyToValue = (currency) => {
-  console.log('🚀 ~ formatCurrencyToValue ~ currency:', currency);
   const value = currency.replace('R$', '').trim().replace(',', '.');
   return +value;
 };

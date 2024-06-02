@@ -3,7 +3,6 @@ import { cartEndpoint } from '../utils/endpoints';
 export const getCartProducts = async () => {
   const response = await fetch(cartEndpoint());
   const json = await response.json();
-  console.log('🚀 ~ getCartProducts ~ response:', response);
 
   return json;
 };

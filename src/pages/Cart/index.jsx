@@ -17,7 +17,6 @@ export default function Cart() {
       let subTotal = 0;
       let total = 0;
       productCart.forEach((product) => {
-        console.log('🚀 ~ productCart.forEach ~ product:', product);
         subTotal += formatCurrencyToValue(product.price);
         total += formatCurrencyToValue(product.priceDiscount ?? product.price);
       });
@@ -51,7 +50,7 @@ export default function Cart() {
               </span>
             </div>
             <Link to={'/order/delivery'}>
-              <button className="button">Finalizar pedido</button>
+              <button className="button">Iniciar pedido</button>
             </Link>
           </section>
         </>
