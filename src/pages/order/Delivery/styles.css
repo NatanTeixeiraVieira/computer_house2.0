@@ -37,6 +37,10 @@
 }
 
 @media screen and (max-width: 500px) {
+  .delivery .title {
+    margin-top: 2rem;
+  }
+
   .delivery .delivery-form-section {
     padding: 0;
   }

@@ -44,3 +44,10 @@
   font-size: 1.5rem;
   text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+  .cart .payment {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

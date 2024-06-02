@@ -4,7 +4,6 @@ import { getAllProducts } from '../../services/products';
 import { formatCurrency } from '../../utils/format';
 import { generateDiscount } from '../../utils/product';
 import Carousel from 'react-bootstrap/Carousel';
-import { Link } from 'react-router-dom';
 import Product from '../../components/Product';
 import { addProductToCart } from '../../services/cart';
 
@@ -12,6 +11,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    localStorage.removeItem('shouldRedirect');
     const getProducts = async () => {
       const response = await getAllProducts();
       const json = await response.json();

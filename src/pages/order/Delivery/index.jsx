@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
 import OrderSteps from '../../../components/OrderSteps';
 import './styles.css';
@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { deliverySchema } from '../../../validations/schemas';
 import { useOrderStore } from '../../../store/order';
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import { regexCep } from '../../../validations/regex';
 import { getInfosByCep } from '../../../services/brasilApi';
 import { cepMask } from '../../../validations/mask';
@@ -29,6 +29,7 @@ export default function Delivery() {
     handleSubmit,
     watch,
     setValue,
+    setError,
   } = useForm({
     resolver: zodResolver(deliverySchema),
     defaultValues: delivery,
@@ -47,9 +48,14 @@ export default function Delivery() {
         setValue('city', address.city);
         setValue('neighborhood', address.neighborhood);
         setValue('street', address.street);
+
+        setError('state', {});
+        setError('city', {});
+        setError('neighborhood', {});
+        setError('street', {});
       })();
     }
-  }, [cepField, setValue]);
+  }, [cepField, setError, setValue]);
 
   const handleSendForm = (data) => {
     addDelivery(data);
