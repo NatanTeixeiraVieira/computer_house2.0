@@ -6,6 +6,13 @@
   background-color: #fefefe;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px #dcdcdc;
+  padding-bottom: 3rem;
+}
+
+.product .trash-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 0.5rem 0 0;
 }
 
 .product .link-buy-product {
@@ -58,7 +65,8 @@
   align-items: center;
   gap: 0.5rem;
   height: 1rem;
-  margin-top: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
 }
 
 .product .product-stars-icon {

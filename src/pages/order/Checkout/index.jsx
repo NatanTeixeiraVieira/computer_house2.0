@@ -4,7 +4,7 @@ import { useOrderStore } from '../../../store/order';
 import './styles.css';
 import FormActionButtons from '../../../components/FormActionButtons';
 import { useReloadFormPage } from '../../../hooks/useReloadFormPage';
-import { deleteAllProductsCart } from '../../../services/cart';
+import { saveOrder } from '../../../services/order';
 
 export default function Checkout() {
   const {
@@ -16,7 +16,8 @@ export default function Checkout() {
   const navigate = useNavigate();
 
   const handleFinishOrder = async () => {
-    await deleteAllProductsCart();
+    await saveOrder({ order, paymentForm, creditCard });
+
     navigate('/order/finish');
   };
 

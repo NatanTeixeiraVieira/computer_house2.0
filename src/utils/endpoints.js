@@ -7,5 +7,7 @@ export const cartEndpoint = () => `${serverBaseUrl}/cart`;
 
 export const cartEndpointId = (id) => `${serverBaseUrl}/cart/${id}`;
 
+export const orderEndpoint = () => `${serverBaseUrl}/order`;
+
 export const getInforsByCepEndpoint = (cep) =>
   `${brasilApiBaseUrl}/cep/v1/${cep}`;

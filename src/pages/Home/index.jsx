@@ -1,21 +1,23 @@
 import { useState, useEffect } from 'react';
 import './styles.css';
-import { getAllProductsPaged } from '../../services/products';
+import { getAllProducts } from '../../services/products';
 import { formatCurrency } from '../../utils/format';
 import { generateDiscount } from '../../utils/product';
 import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 import Product from '../../components/Product';
+import { addProductToCart } from '../../services/cart';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
-      const response = await getAllProductsPaged();
+      const response = await getAllProducts();
       const json = await response.json();
 
       const productWithDiscount = json.map((product, index) => {
+        product.id = product.id.toString();
         const discount = generateDiscount(product.price);
         return {
           ...product,
@@ -41,7 +43,10 @@ export default function Home() {
             (product) =>
               product.priceDiscount && (
                 <Carousel.Item key={product.id} className="item">
-                  <Link to="#" className="image-container">
+                  <div
+                    className="image-container"
+                    onClick={() => addProductToCart(product)}
+                  >
                     <img
                       src={product.image}
                       alt={product.title}
@@ -58,7 +63,7 @@ export default function Home() {
                         {product.priceDiscount}
                       </strong>
                     </span>
-                  </Link>
+                  </div>
                 </Carousel.Item>
               ),
           )}
