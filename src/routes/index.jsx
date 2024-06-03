@@ -6,17 +6,55 @@ import Payment from '../pages/order/Payment';
 import Finish from '../pages/order/Finish';
 import Checkout from '../pages/order/Checkout';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
+import RequireAuth from '../components/RequireAuth';
 
 export const Routes = () => {
   return (
     <ReactRoutes>
       <Route path="/" element={<Home />} />
-      <Route path="/order/delivery" element={<Delivery />} />
-      <Route path="/order/payment" element={<Payment />} />
-      <Route path="/order/checkout" element={<Checkout />} />
-      <Route path="/order/finish" element={<Finish />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/register" element={<Register />} />
+      <Route
+        path="/order/delivery"
+        element={
+          <RequireAuth>
+            <Delivery />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/order/payment"
+        element={
+          <RequireAuth>
+            <Payment />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/order/checkout"
+        element={
+          <RequireAuth>
+            <Checkout />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/order/finish"
+        element={
+          <RequireAuth>
+            <Finish />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/cart"
+        element={
+          <RequireAuth>
+            <Cart />
+          </RequireAuth>
+        }
+      />
     </ReactRoutes>
   );
 };

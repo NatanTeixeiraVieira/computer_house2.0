@@ -11,3 +11,5 @@ export const orderEndpoint = () => `${serverBaseUrl}/order`;
 
 export const getInforsByCepEndpoint = (cep) =>
   `${brasilApiBaseUrl}/cep/v1/${cep}`;
+
+export const userEndpoint = () => `${serverBaseUrl}/user`;

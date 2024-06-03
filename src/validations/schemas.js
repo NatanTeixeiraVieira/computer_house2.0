@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { regexCep } from './regex';
+import { regexCep, regexEmail } from './regex';
 
 const requiredStringField = (message) =>
   z.string({ required_error: message }).min(1, message);
@@ -19,4 +19,17 @@ export const deliverySchema = z.object({
 export const creditCardPaymentSchema = z.object({
   number: requiredStringField('O cartão de crédito é obrigatório.'),
   name: requiredStringField('O nome é obrigatório.'),
+});
+
+export const registerSchema = z.object({
+  name: requiredStringField('O nome é obrigatório.'),
+  surname: requiredStringField('O sobrenome é obrigatório.'),
+  phoneNumber: requiredStringField('O Telefone é obrigatório.'),
+  email: requiredStringField('O email é obrigatório.')
+    .email('Email inválido')
+    .regex(regexEmail, 'Email inválido'),
+  password: requiredStringField('A senha é obrigatória').min(
+    8,
+    'A senha deve conter pelo menos 8 caracteres.',
+  ),
 });
