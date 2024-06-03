@@ -1,5 +1,11 @@
 import { userEndpoint, userEndpointId } from '../utils/endpoints';
 
+export const getAllUsers = async () => {
+  const response = await fetch(userEndpoint());
+  const json = await response.json();
+  return json;
+};
+
 export const getUser = async (userId) => {
   const response = await fetch(userEndpointId(userId));
   const json = await response.json();

@@ -1,7 +1,16 @@
-div.footer{
-    height: 150px;
-    background-color: black;
-    color: red;
-    padding: 3px;
-    text-align: center;
+.footer {
+  height: 150px;
+  background-color: black;
+  color: red;
+  padding: 3px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2rem;
+}
+
+.footer a {
+  color: red;
 }

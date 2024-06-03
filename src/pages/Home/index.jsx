@@ -6,6 +6,7 @@ import { generateDiscount } from '../../utils/product';
 import Carousel from 'react-bootstrap/Carousel';
 import Product from '../../components/Product';
 import { addProductToCart } from '../../services/cart';
+import { getToken } from '../../utils/auth';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -15,7 +16,6 @@ export default function Home() {
     const getProducts = async () => {
       const response = await getAllProducts();
       const json = await response.json();
-      console.log("🚀 ~ getProducts ~ json:", json)
 
       const productWithDiscount = json.map((product, index) => {
         product.id = product.id.toString();
@@ -36,6 +36,8 @@ export default function Home() {
     getProducts();
   }, []);
 
+  const isAuthenticated = !!getToken();
+
   return (
     <div className="home">
       <section>
@@ -46,7 +48,9 @@ export default function Home() {
                 <Carousel.Item key={product.id} className="item">
                   <div
                     className="image-container"
-                    onClick={() => addProductToCart(product)}
+                    onClick={() =>
+                      isAuthenticated ? addProductToCart(product) : null
+                    }
                   >
                     <img
                       src={product.image}
