@@ -5,6 +5,7 @@ import Cart from '../pages/Cart';
 import Payment from '../pages/order/Payment';
 import Finish from '../pages/order/Finish';
 import Checkout from '../pages/order/Checkout';
+import Login from '../pages/Login';
 
 export const Routes = () => {
   return (
@@ -14,6 +15,7 @@ export const Routes = () => {
       <Route path="/order/payment" element={<Payment />} />
       <Route path="/order/checkout" element={<Checkout />} />
       <Route path="/order/finish" element={<Finish />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/cart" element={<Cart />} />
     </ReactRoutes>
   );

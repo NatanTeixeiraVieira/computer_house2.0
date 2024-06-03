@@ -1,27 +1,27 @@
-import React from 'react'
-import '.styles/css'
+import { useState } from 'react'
+import './styles.css'
 import { Link } from 'react-router-dom'
-const [email, setEmail] = useState("")
-const [senha, setSenha] = useState("")
+import { LayoutComponents } from '../../components/LoyaoutComponents'
 const Login = () => {
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
     return (
         <LayoutComponents>
             <form className='login-form'>
             <div>
                 <span className="login-form-title">Bem Vindo!</span>
                 <div className="wrap-input">
-                    <input type="email">
-                        value={email}
-                        onChange={e => setEmail(e.targed.value)}
+                    <input type="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)} />
                         <span className="focus-input" data-placeholder="Email"></span>
-                    </input>
                 </div>
                 <div className="wrap-input">
-                    <input type="Senha">
+                    <input type="password"
                         value={senha}
-                        onChange={e => setSenha(e.targed.value)}
+                        onChange={e => setSenha(e.target.value)}
+                    />
                         <span className="focus-input" data-placeholder="Senha"></span>
-                    </input>
                 </div>
                 <div className="container-login-form-btn"></div>
                 <button className="login-form-btn">Login</button>
