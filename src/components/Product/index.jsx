@@ -29,7 +29,7 @@ export default function Product({ product, isCart, onDeleteProductFromCart }) {
           <strong>{formatCurrency(product.price)}</strong>
           <div className="rating">
             <StarRate />
-            <span>{product.rating.rate}</span>
+            <span>{product?.rating?.rate}</span>
           </div>
         </div>
       </Link>

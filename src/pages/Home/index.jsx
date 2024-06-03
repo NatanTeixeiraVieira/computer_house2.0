@@ -7,6 +7,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Product from '../../components/Product';
 import { addProductToCart } from '../../services/cart';
 import { getToken } from '../../utils/auth';
+import { translateText } from '../../services/translate';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -17,11 +18,20 @@ export default function Home() {
       const response = await getAllProducts();
       const json = await response.json();
 
-      const productWithDiscount = json.map((product, index) => {
+      const productWithDiscount = json.map(async (product, index) => {
         product.id = product.id.toString();
         const discount = generateDiscount(product.price);
+        const [title, description, category] = await Promise.all([
+          translateText(product.title),
+          translateText(product.description),
+          translateText(product.category),
+        ]);
+
         return {
           ...product,
+          title,
+          description,
+          category,
           price: formatCurrency(product.price),
           priceDiscount:
             discount !== 1 && index % 2 === 0
@@ -30,7 +40,9 @@ export default function Home() {
         };
       });
 
-      setProducts(productWithDiscount);
+      const productDiscount = await Promise.all(productWithDiscount);
+
+      setProducts(productDiscount);
     };
 
     getProducts();
