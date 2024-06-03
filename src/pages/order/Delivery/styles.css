@@ -19,34 +19,6 @@
   margin-bottom: 1rem;
 }
 
-.delivery .delivery-form-section .buttons {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.delivery .delivery-form-section .buttons button,
-.delivery .delivery-form-section .buttons a {
-  text-align: center;
-  width: 16rem;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  color: #ededed;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.delivery .delivery-form-section .buttons .cancel {
-  background-color: #d71e1e;
-}
-
-.delivery .delivery-form-section .buttons .continue {
-  background-color: #0ec70e;
-}
-
 @media screen and (max-width: 1020px) {
   .delivery .delivery-form-section {
     width: 100%;
@@ -65,6 +37,10 @@
 }
 
 @media screen and (max-width: 500px) {
+  .delivery .title {
+    margin-top: 2rem;
+  }
+
   .delivery .delivery-form-section {
     padding: 0;
   }

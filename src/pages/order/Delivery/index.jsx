@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
 import OrderSteps from '../../../components/OrderSteps';
 import './styles.css';
@@ -10,6 +10,8 @@ import { useEffect } from 'react';
 import { regexCep } from '../../../validations/regex';
 import { getInfosByCep } from '../../../services/brasilApi';
 import { cepMask } from '../../../validations/mask';
+import FormActionButtons from '../../../components/FormActionButtons';
+import { useReloadFormPage } from '../../../hooks/useReloadFormPage';
 
 export default function Delivery() {
   const navigate = useNavigate();
@@ -27,10 +29,13 @@ export default function Delivery() {
     handleSubmit,
     watch,
     setValue,
+    setError,
   } = useForm({
     resolver: zodResolver(deliverySchema),
     defaultValues: delivery,
   });
+
+  useReloadFormPage();
 
   const cepField = watch('cep');
 
@@ -43,12 +48,16 @@ export default function Delivery() {
         setValue('city', address.city);
         setValue('neighborhood', address.neighborhood);
         setValue('street', address.street);
+
+        setError('state', {});
+        setError('city', {});
+        setError('neighborhood', {});
+        setError('street', {});
       })();
     }
-  }, [cepField, setValue]);
+  }, [cepField, setError, setValue]);
 
   const handleSendForm = (data) => {
-    console.log('🚀 ~ handleSendForm ~ data:', data);
     addDelivery(data);
     navigate('/order/payment');
   };
@@ -110,15 +119,9 @@ export default function Delivery() {
               helperText={errors?.number?.message}
             />
           </div>
-          <div className="buttons">
-            <Link to="#" className="cancel">
-              {' '}
-              Voltar{' '}
-            </Link>
-            <button type="submit" className="continue">
-              Continuar
-            </button>
-          </div>
+          <FormActionButtons
+            onContinueButtonClick={handleSubmit(handleSendForm)}
+          />
         </form>
       </section>
     </div>

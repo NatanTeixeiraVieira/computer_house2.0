@@ -3,6 +3,8 @@ import Home from '../pages/Home';
 import Delivery from '../pages/order/Delivery';
 import Cart from '../pages/Cart';
 import Payment from '../pages/order/Payment';
+import Finish from '../pages/order/Finish';
+import Checkout from '../pages/order/Checkout';
 
 export const Routes = () => {
   return (
@@ -10,6 +12,8 @@ export const Routes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/order/delivery" element={<Delivery />} />
       <Route path="/order/payment" element={<Payment />} />
+      <Route path="/order/checkout" element={<Checkout />} />
+      <Route path="/order/finish" element={<Finish />} />
       <Route path="/cart" element={<Cart />} />
     </ReactRoutes>
   );

@@ -1,0 +1,14 @@
+.confirm-delete .action-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: #eee;
+}
+
+.confirm-delete .confirm-button {
+  background-color: #d71e1e;
+}
+
+.confirm-delete .cancel-button {
+  background-color: #0ec70e;
+}
