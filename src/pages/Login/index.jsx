@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,10 @@ const Login = () => {
   const [senha, setSenha] = useState('');
   return (
     <LayoutComponents>
+      <div className="container">
+      <div className="container-login">
+        <div className="wrap-login">
+          <form className="login-form"></form>
       <form className="login">
         <div>
           <span className="login-form-title">Bem Vindo!</span>
@@ -36,6 +41,9 @@ const Login = () => {
           </Link>
         </div>
       </form>
+      </div>
+      </div>
+    </div>
     </LayoutComponents>
   );
 };
