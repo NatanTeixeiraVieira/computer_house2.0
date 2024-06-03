@@ -48,6 +48,8 @@ export default function Home() {
     getProducts();
   }, []);
 
+  // useFallback(setProducts);
+
   const isAuthenticated = !!getToken();
 
   return (
