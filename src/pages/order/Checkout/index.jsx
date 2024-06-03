@@ -5,6 +5,8 @@ import './styles.css';
 import FormActionButtons from '../../../components/FormActionButtons';
 import { useReloadFormPage } from '../../../hooks/useReloadFormPage';
 import { saveOrder } from '../../../services/order';
+import { useEffect, useState } from 'react';
+import { getUser } from '../../../services/user';
 
 export default function Checkout() {
   const {
@@ -21,11 +23,38 @@ export default function Checkout() {
     navigate('/order/finish');
   };
 
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const token = localStorage.getItem('token');
+      console.log('🚀 ~ token:', token);
+      const response = await getUser(JSON.parse(token));
+
+      setUser(response);
+    })();
+  }, []);
+
   return (
     <div className="checkout">
       <OrderSteps />
       <div className="order-summary">
         <h1>Resumo do Pedido</h1>
+
+        {user && (
+          <section className="section">
+            <h2>Resumo pessoal</h2>
+            <p>
+              <strong>Nome completo:</strong> {user.name} {user.surname}
+            </p>
+            <p>
+              <strong>Telefone:</strong> {user.phoneNumber}
+            </p>
+            <p>
+              <strong>Email:</strong> {user.email}
+            </p>
+          </section>
+        )}
 
         <section className="section">
           <h2>Endereço de Entrega</h2>

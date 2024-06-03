@@ -38,6 +38,7 @@
   justify-content: center;
   list-style: none;
   margin-bottom: 0;
+  gap: 1rem;
 }
 
 .header .nav-list ul li {
@@ -63,7 +64,6 @@
   text-decoration: none;
   font-size: 1.15rem;
   font-weight: 400;
-  margin: 0 1rem;
   padding: 0;
   display: flex;
   align-items: center;

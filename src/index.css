@@ -11,3 +11,7 @@ main {
   background-color: #eee;
   min-height: calc(100vh - 6rem);
 }
+
+ul {
+  padding: 0;
+}

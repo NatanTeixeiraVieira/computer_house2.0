@@ -146,23 +146,29 @@
         }
       },
       "paymentForm": "pix"
+    },
+    {
+      "id": "ade7",
+      "order": {
+        "delivery": {
+          "cep": "85060-060",
+          "state": "PR",
+          "city": "Guarapuava",
+          "neighborhood": "São Cristóvão",
+          "street": "Avenida Concórdia",
+          "number": "123"
+        }
+      },
+      "paymentForm": "pix"
     }
   ],
   "user": [
     {
-      "id": "64e7",
+      "id": "a28b",
       "name": "Natãn",
       "surname": "Teixeira Vieira",
-      "phoneNumber": "43142343",
-      "email": "fewfefe@email.com",
-      "password": "12345677"
-    },
-    {
-      "id": "13e4",
-      "name": "Natãn",
-      "surname": "Teixeira Vieira",
-      "phoneNumber": "42988874516",
-      "email": "teste2@teste.com",
+      "phoneNumber": "123456789",
+      "email": "teste@teste.com",
       "password": "12345678"
     }
   ]

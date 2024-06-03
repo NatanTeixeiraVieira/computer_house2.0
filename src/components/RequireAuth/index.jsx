@@ -8,7 +8,7 @@ export default function RequireAuth({ children }) {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if (token) {
+    if (JSON.parse(token)) {
       setIsAuthenticated(true);
       return;
     }

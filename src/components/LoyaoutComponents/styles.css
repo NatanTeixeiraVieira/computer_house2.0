@@ -23,3 +23,9 @@
   padding: 3rem;
   width: 40rem;
 }
+
+@media screen and (max-width: 500px) {
+  .wrap-layout-components {
+    padding: 3rem 1rem;
+  }
+}

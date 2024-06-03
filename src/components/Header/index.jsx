@@ -7,20 +7,17 @@ export default function Header() {
     <header className="header">
       <nav className="nav-bar">
         <div className="logo">
-          <h1>
-            Shop <span className="span">House</span>
-          </h1>
+          <Link to="/">
+            <h1>
+              Shop <span className="span">House</span>
+            </h1>
+          </Link>
         </div>
         <nav className="nav-list">
           <ul>
             <li>
               <Link to="/" className="nav-link">
                 Home
-              </Link>
-            </li>
-            <li>
-              <Link to="" className="nav-link">
-                Suporte
               </Link>
             </li>
             <li>

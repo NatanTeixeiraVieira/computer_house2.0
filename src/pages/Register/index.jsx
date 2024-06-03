@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { LayoutComponents } from '../../components/LoyaoutComponents';
 import './styles.css';
 import { zodResolver } from '@hookform/resolvers/zod';
