@@ -14,6 +14,7 @@ export default function Home() {
     const getProducts = async () => {
       const response = await getAllProductsPaged();
       const json = await response.json();
+      console.log("🚀 ~ getProducts ~ json:", json)
 
       const productWithDiscount = json.map((product, index) => {
         const discount = generateDiscount(product.price);
